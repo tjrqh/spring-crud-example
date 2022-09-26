@@ -19,17 +19,19 @@ public class PostCreateController {
         System.out.println(r.getContent());
         return postService.create(r);
     }
+
     @PutMapping("/update")
     public Long updatePost(@RequestBody PostUpdateRequest u) {
         return postService.update(u);
     }
+
     @DeleteMapping("/delete")
     public Long deletePost(@RequestBody PostReadResponse p) {
         return postService.delete(p);
     }
 
     @GetMapping("/post/{id}")
-    public PostReadResponse readPost(@PathVariable(value = "id") Long id)  {
+    public PostReadResponse readPost(@PathVariable(value = "id") Long id) {
         PostReadResponse p = new PostReadResponse();
         System.out.println(p.getTitle());
         System.out.println(p.getContent());
